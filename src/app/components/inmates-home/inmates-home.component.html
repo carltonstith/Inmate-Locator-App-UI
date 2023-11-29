@@ -1,60 +1,12 @@
 <div class="section">
-  <div class="container">
+  <div class="">
     <div class="mb-4">
       <div class="m-3">
-        <h2>Search Criteria</h2>
+        <h2 class="title">Search Criteria</h2>
       </div>
-      <!-- <div class="tabs">
-      <ul>
-        <li>
-          <a href="#firstName" (click)="switchTab($event, 'firstName')"
-            >First Name</a
-          >
-        </li>
-        <li>
-          <a href="#lastName" (click)="switchTab($event, 'firstName')"
-            >Last Name</a
-          >
-        </li>
-      </ul>
-      <div [ngSwitch]="activeTab">
-        <div id="firstName" *ngSwitchCase="'firstName'">
-          <input
-            type="text"
-            [(ngModel)]="firstName"
-            placeholder="Search First Name"
-          />
-        </div>
-        <div *ngSwitchCase="'lastName'">
-          <input
-            id="lastName"
-            type="text"
-            [(ngModel)]="lastName"
-            placeholder="Search Last Name"
-          />
-        </div>
-      </div>
-    </div> -->
 
-      <!-- <button (click)="switchTab()" type="checkbox">show/hide</button>
-
-    <div *ngIf="activeTab" class="row container-fluid" id="divshow">
-      <input
-            type="text"
-            [(ngModel)]="firstName"
-            placeholder="Search First Name"
-          />
-    </div>
-    <div *ngIf="!activeTab" class="row container-fluid" id="divshow">
-      <input
-            id="lastName"
-            type="text"
-            [(ngModel)]="lastName"
-            placeholder="Search Last Name"
-          />
-    </div> -->
-
-      <input
+      <div class="bm-3">
+        <input
         type="radio"
         name="search"
         (click)="switchSearchFirstName($event)"
@@ -73,6 +25,7 @@
         class="pl-2"
       />
       <label for="" class="mr-2 ml-2">Last Name</label>
+      </div>
 
       <div class="m-2" *ngIf="activeTab">
         <input
@@ -94,10 +47,14 @@
     <div class="columns">
       <div class="column">
         <div class="table-container">
-          <table class="table">
+          <table class="table is-bordered is-hoverable">
             <thead>
               <tr>
-                <th><abbr title="Position">First Name</abbr></th>
+                <th scope="col">
+                  First Name
+                  <fa-icon [icon]="faSort" (click)="sort(true)"></fa-icon>
+                  <fa-icon [icon]="faSort" (click)="sort(false)"></fa-icon>
+                </th>
                 <th>Middle Name</th>
                 <th>Last Name</th>
                 <th>Inmate Number</th>

@@ -1,4 +1,4 @@
-<nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a href="/" class="navbar-item">Inmate Locator</a>
 
@@ -11,11 +11,11 @@
 
   <div id="navbarBasicExample" class="navbar-menu" [ngClass]="{'is-active': toggle}">
     <div class="navbar-start">
-      <a class="navbar-item" routerLink="/">
+      <a class="navbar-item" routerLink="/" routerLinkActive="active">
         Home
       </a>
 
-      <a class="navbar-item" routerLink="/inmates">
+      <a class="navbar-item" routerLink="/inmates" routerLinkActive="active">
         Inmate Locator
       </a>
     </div>
