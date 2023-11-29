@@ -1,16 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeModule } from './home/home.module';
+// import { SearchPipe } from './helpers/search.pipe';
+// import { InmateDetailsComponent } from './components/inmate-details/inmate-details.component';
+//import { InmateDetailsModalComponent } from './components/inmate-details-modal/inmate-details-modal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // SearchPipe,
+    // InmateDetailsComponent,
+    //InmateDetailsModalComponent,
+    //InmatesHomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,146 @@
+<div class="section">
+  <div class="container">
+    <div class="mb-4">
+      <div class="m-3">
+        <h2>Search Criteria</h2>
+      </div>
+      <!-- <div class="tabs">
+      <ul>
+        <li>
+          <a href="#firstName" (click)="switchTab($event, 'firstName')"
+            >First Name</a
+          >
+        </li>
+        <li>
+          <a href="#lastName" (click)="switchTab($event, 'firstName')"
+            >Last Name</a
+          >
+        </li>
+      </ul>
+      <div [ngSwitch]="activeTab">
+        <div id="firstName" *ngSwitchCase="'firstName'">
+          <input
+            type="text"
+            [(ngModel)]="firstName"
+            placeholder="Search First Name"
+          />
+        </div>
+        <div *ngSwitchCase="'lastName'">
+          <input
+            id="lastName"
+            type="text"
+            [(ngModel)]="lastName"
+            placeholder="Search Last Name"
+          />
+        </div>
+      </div>
+    </div> -->
+
+      <!-- <button (click)="switchTab()" type="checkbox">show/hide</button>
+
+    <div *ngIf="activeTab" class="row container-fluid" id="divshow">
+      <input
+            type="text"
+            [(ngModel)]="firstName"
+            placeholder="Search First Name"
+          />
+    </div>
+    <div *ngIf="!activeTab" class="row container-fluid" id="divshow">
+      <input
+            id="lastName"
+            type="text"
+            [(ngModel)]="lastName"
+            placeholder="Search Last Name"
+          />
+    </div> -->
+
+      <input
+        type="radio"
+        name="search"
+        (click)="switchSearchFirstName($event)"
+        [(ngModel)]="default"
+        [value]="0"
+        class="pl-2"
+      />
+      <label for="" class="mr-2 ml-2">First Name</label>
+
+      <input
+        type="radio"
+        name="search"
+        (click)="switchSearchLastName($event)"
+        [(ngModel)]="default"
+        [value]="1"
+        class="pl-2"
+      />
+      <label for="" class="mr-2 ml-2">Last Name</label>
+
+      <div class="m-2" *ngIf="activeTab">
+        <input
+          type="text"
+          [(ngModel)]="firstName"
+          placeholder="Search First Name"
+        />
+      </div>
+      <div class="m-2" *ngIf="!activeTab">
+        <input
+          id="lastName"
+          type="text"
+          [(ngModel)]="lastName"
+          placeholder="Search Last Name"
+        />
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th><abbr title="Position">First Name</abbr></th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Inmate Number</th>
+                <th>Parole Number</th>
+                <th>Gender</th>
+                <th>Race/Ethnicity</th>
+                <th>Committing County</th>
+                <th>Current Location</th>
+                <th>Citizenship</th>
+                <th>Date of Birth</th>
+                <th>Sponsor Name</th>
+                <th>Sponsor Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let inmate of inmates | search : firstName || lastName; let i = index"
+              >
+                <th
+                  scope="row"
+                  id="{{ inmate.id }}"
+                  (click)="onClickGetDetails(inmate.id)"
+                >
+                  {{ inmate.firstName }}
+                </th>
+                <td>{{ inmate.middleName }}</td>
+                <td>{{ inmate.lastName }}</td>
+                <td>{{ inmate.inmateNumber }}</td>
+                <td>{{ inmate.paroleNumber }}</td>
+                <td>{{ inmate.gender }}</td>
+                <td>{{ inmate.raceEthnicity }}</td>
+                <td>{{ inmate.committingCounty }}</td>
+                <td>{{ inmate.currentLocation }}</td>
+                <td>{{ inmate.citizenship }}</td>
+                <td>{{ inmate.dateOfBirth }}</td>
+                <td>{{ inmate.randomName }}</td>
+                <td>{{ inmate.randomEmail }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-inmate-details-modal></app-inmate-details-modal>

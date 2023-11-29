@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'inmateLocatorApp-UI';
+  toggle: boolean = false;
+
+  toggleNav() {
+    console.log("toggleNav");
+    this.toggle = !this.toggle;
+  }
 }

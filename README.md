@@ -2,9 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
+## Getting Started
+Clone the repo, `cd` into this repo and run `npm install` to get node dependencies.
+
+## Start JSON Server
+`json-server --watch db.json`
+
+Now if you go to http://localhost:3000/inmates, you'll get data.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Run json-server
 
 ## Code scaffolding
 
