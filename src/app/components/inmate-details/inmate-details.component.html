@@ -1,2 +1,73 @@
-<p>inmate-details works!</p>
-<button (click)="goBack()">Back</button>
+<section>
+  <div class="container">
+    <div>
+      <h1 class="title">Details</h1>
+      <button (click)="goBack()">Back</button>
+    </div>
+    <div>
+      <div class="table-container">
+        <table class="table is-bordered is-hoverable">
+          <thead>
+            <tr>
+              <th scope="col">
+                First Name
+              </th>
+              <th>Middle Name</th>
+              <th>Last Name</th>
+              <th>Inmate Number</th>
+              <th>Parole Number</th>
+              <th>Gender</th>
+              <th>Race/Ethnicity</th>
+              <th>Committing County</th>
+              <th>Current Location</th>
+              <th>Citizenship</th>
+              <th>Date of Birth</th>
+              <th>Sponsor Name</th>
+              <th>Sponsor Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Test</th>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <!-- <tr
+              *ngFor="let inmate of inmates | search : firstName; let i = index"
+            >
+              <th
+                scope="row"
+                id="{{ inmate.id }}"
+                (click)="onClickGetDetails(inmate.id)"
+              >
+                {{ inmate.firstName }}
+              </th>
+              <td>{{ inmate.middleName }}</td>
+              <td>{{ inmate.lastName }}</td>
+              <td>{{ inmate.inmateNumber }}</td>
+              <td>{{ inmate.paroleNumber }}</td>
+              <td>{{ inmate.gender }}</td>
+              <td>{{ inmate.raceEthnicity }}</td>
+              <td>{{ inmate.committingCounty }}</td>
+              <td>{{ inmate.currentLocation }}</td>
+              <td>{{ inmate.citizenship }}</td>
+              <td>{{ inmate.dateOfBirth }}</td>
+              <td>{{ inmate.randomName }}</td>
+              <td>{{ inmate.randomEmail }}</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

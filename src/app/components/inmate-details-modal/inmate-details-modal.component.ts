@@ -1,30 +1,37 @@
-import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
-import { ModalService } from '../../services/modal.service';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { InmatesService } from 'src/app/services/inmates.service';
 @Component({
   selector: 'app-inmate-details-modal',
   templateUrl: './inmate-details-modal.component.html',
   styleUrls: ['./inmate-details-modal.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
-export class InmateDetailsModalComponent implements OnInit, OnDestroy {
-  @Input() id?: string;
-  isOpened: boolean = false;
-  private element: any;
+export class InmateDetailsModalComponent implements OnInit {
+  @Input() selectedInmate: any;
+  @Input() age: any;
+  inmateProfile: any;
+  inmateProfilePicture: any;
 
-  constructor(private modalService: ModalService, private el: ElementRef) {
-    this.element = el.nativeElement;
+  constructor(
+    private modalService: NgbModal,
+    private inmateService: InmatesService
+  ) {}
+
+  ngOnInit() {
+    this.inmateService.getInmateProfile().subscribe((data) => {
+      this.inmateProfile = data.results;
+      this.inmateProfile.forEach((element: any) => {
+        this.inmateProfilePicture = element.picture.large;
+        // if (element.gender == this.selectedInmate.gender) {
+        //   this.inmateProfilePicture = element.picture.thumbnail;
+        // } else {
+        //   this.inmateProfilePicture = 'https://randomuser.me/api/portraits/lego/1.jpg';
+        // }
+      });
+    });
   }
 
-  ngOnInit(): void {
-    this.modalService.add(this);
-
-    document.body.appendChild(this.element);
+  closeModal() {
+    this.modalService.dismissAll();
   }
-
-  ngOnDestroy(): void {
-    this.modalService.remove(this);
-    this.element.remove();
-  }
-
 }

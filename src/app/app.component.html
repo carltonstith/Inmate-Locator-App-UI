@@ -1,24 +1,2 @@
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a href="/" class="navbar-item">Inmate Locator</a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" (click)="toggleNav()" [ngClass]="{'is-active': toggle}">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu" [ngClass]="{'is-active': toggle}">
-    <div class="navbar-start">
-      <a class="navbar-item" routerLink="/" routerLinkActive="active">
-        Home
-      </a>
-
-      <a class="navbar-item" routerLink="/inmates" routerLinkActive="active">
-        Inmate Locator
-      </a>
-    </div>
-  </div>
-</nav>
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>

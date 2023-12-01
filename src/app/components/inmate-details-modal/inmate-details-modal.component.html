@@ -1,5 +1,33 @@
-<div class="details-modal">
-  <div class="details-body">
-    <ng-content></ng-content>
+<div class="modal-header">
+  <h4 class="modal-title">Inmate Details</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="closeModal()"
+  >
+    <span aria-hidden="true"></span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-6">
+      <img src="{{ inmateProfilePicture }}" alt="" />
+    </div>
+    <div class="col-6">
+      <div>
+        <p>
+          Name: {{ selectedInmate.firstName }} {{ selectedInmate.lastName }}
+        </p>
+        <p>DOB: {{ selectedInmate.dateOfBirth | date }}</p>
+        <p>Age: {{ selectedInmate.age }}</p>
+        <p>Gender: {{ selectedInmate.gender }}</p>
+      </div>
+    </div>
   </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="closeModal()">
+    Save
+  </button>
 </div>
