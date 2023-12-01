@@ -15,7 +15,8 @@ Now if you go to http://localhost:3000/inmates, you'll get data.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Random Image
-Using [RandomUser.me](https://randomuser.me/) to get a random inmate
+Using [RandomUser.me](https://randomuser.me/) to get a random inmate.
+Another random image generator used [Random users](https://xsgames.co/randomusers/)
 
 ## Code scaffolding
 
