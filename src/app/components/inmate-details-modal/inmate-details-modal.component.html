@@ -11,23 +11,42 @@
 </div>
 <div class="modal-body">
   <div class="row">
-    <div class="col-6">
+    <div class="col-4">
       <img src="{{ inmateProfilePicture }}" alt="" />
     </div>
-    <div class="col-6">
+    <div class="col-8">
       <div>
         <p>
-          Name: {{ selectedInmate.firstName }} {{ selectedInmate.lastName }}
+          <strong>Name</strong>: {{ selectedInmate.firstName }} {{ selectedInmate.lastName }}
         </p>
-        <p>DOB: {{ selectedInmate.dateOfBirth | date }}</p>
-        <p>Age: {{ selectedInmate.age }}</p>
-        <p>Gender: {{ selectedInmate.gender }}</p>
+        <p><strong>Parole Number</strong>: {{selectedInmate.paroleNumber }}</p>
+        <p><strong>Age</strong>: {{ selectedInmate.age }}</p>
+        <p><strong>Date of Birth</strong>: {{ selectedInmate.dateOfBirth | date }}</p>
+        <p><strong>Race/Ethnicity</strong>: {{ selectedInmate.raceEthnicity }} </p>
+        <p><strong>Height</strong>: {{ inmateHeight }}</p>
+        <p><strong>Gender</strong>: {{ selectedInmate.gender }}</p>
+        <p><strong>Citizenship</strong>: {{ selectedInmate.citizenship }}</p>
+        <!-- <p><strong>Current Location</strong>: <a target="_blank" href="https://www.cor.pa.gov/Facilities/StatePrisons/Pages/Camp-Hill.aspx">{{ selectedInmate.currentLocation }}</a></p> -->
+        <p><strong>Current Location</strong>: <a routerLink="/mock-facility" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="closeModal()">{{ selectedInmate.currentLocation }}</a></p>
+      </div>
+      <div>
+        <p><strong>Permanent Location</strong>: {{ selectedInmate.currentLocation }}</p>
+        <p><strong>Committing County</strong>: {{ selectedInmate.committingCounty }}</p>
+        <p><strong>Last Updated Time</strong>: 12/1/2023 4:00:19 AM</p>
       </div>
     </div>
+    <!-- <div class="col-4"></div> -->
   </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" (click)="closeModal()">
-    Save
-  </button>
+  <div class="float-start">
+    <button type="button" class="btn btn-secondary" (click)="printDetails()">
+      Print
+    </button>
+  </div>
+  <div class="float-end">
+    <button type="button" class="btn btn-secondary" (click)="closeModal()">
+      Close
+    </button>
+  </div>
 </div>

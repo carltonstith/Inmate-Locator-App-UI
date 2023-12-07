@@ -14,6 +14,8 @@ export class InmateDetailsModalComponent implements OnInit {
   inmateProfilePicture: any;
   inmateGender?: string;
 
+  inmateHeight: any;  // height of inmate
+
   constructor(
     private modalService: NgbModal,
     private inmateService: InmatesService
@@ -22,6 +24,8 @@ export class InmateDetailsModalComponent implements OnInit {
   ngOnInit() {
     // new inmate profile
     this.inmateGender = this.selectedInmate.gender;
+
+    this.inmateHeight = this.generateHeight();
 
     if(this.inmateGender == 'female') {
       this.inmateService.getFemaleInmateProfilePicture().subscribe((data) => {
@@ -54,5 +58,16 @@ export class InmateDetailsModalComponent implements OnInit {
 
   closeModal() {
     this.modalService.dismissAll();
+  }
+
+  printDetails() {
+    console.log('print details');
+  }
+
+  // generate a random height for a person
+  generateHeight() {
+    let feet = Math.floor(Math.random() * 3) + 5; // 5-7
+    let inches = Math.floor(Math.random() * 12) + 1; // 1-11
+    return feet + "'" + inches + '"';
   }
 }

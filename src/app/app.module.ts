@@ -9,6 +9,7 @@ import { HomeModule } from './home/home.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './components/login/login.component';
+// import { MockCorrectionalFaciltyComponent } from './components/mock-correctional-facilty/mock-correctional-facilty.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { SearchPipe } from './helpers/search.pipe';
 // import { InmateDetailsComponent } from './components/inmate-details/inmate-details.component';
@@ -19,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
     AppComponent,
     NavbarComponent,
     LoginComponent,
+    // MockCorrectionalFaciltyComponent,
     // SearchPipe,
     // InmateDetailsComponent,
     //InmateDetailsModalComponent,
