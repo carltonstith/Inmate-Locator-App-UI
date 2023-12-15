@@ -1,4 +1,10 @@
 {
+  "users": [
+    {
+      "email": "testuser@gmail.com",
+      "password": "testuser"
+    }
+  ],
   "inmates": [
     {
       "id": "96caeecf-0a5d-4177-bd5c-f1f90f364689",

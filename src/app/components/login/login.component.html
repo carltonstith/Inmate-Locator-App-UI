@@ -1,1 +1,17 @@
-<p>login works!</p>
+<!-- FILEPATH: /Users/carltonstith/Documents/code/inmateLocatorApp-UI/src/app/components/login/login.component.html -->
+
+<h1>Login</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username" required>
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password" required>
+  </div>
+
+  <button type="submit">Login</button>
+</form>

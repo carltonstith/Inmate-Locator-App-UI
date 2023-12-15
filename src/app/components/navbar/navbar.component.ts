@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faHouse, faBookmark, faGear, faCircleQuestion, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +16,7 @@ export class NavbarComponent implements OnInit {
   public faRightFromBracket = faRightFromBracket;
   toggle: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: AuthService) { }
 
   ngOnInit(): void {
 
@@ -28,6 +29,7 @@ export class NavbarComponent implements OnInit {
 
   logOut() {
     console.log("logOut");
+    this.auth.logout();
     // localStorage.removeItem('token');
     // this.router.navigate(['/login']);
   }

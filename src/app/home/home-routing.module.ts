@@ -6,7 +6,7 @@ import { MockCorrectionalFaciltyComponent } from '../components/mock-correctiona
 
 const routes: Routes = [
   {
-    path: 'inmates',
+    path: '',
     component: InmatesHomeComponent
   },
   {
